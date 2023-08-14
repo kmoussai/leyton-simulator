@@ -4,8 +4,8 @@
 
 ## Prerequisites
 
-Docker (for deployment and development)
-Node.js (only for development)
+- Docker (for deployment and development)
+- Node.js (only for development)
 
 ## Getting Started
 
