@@ -1,6 +1,7 @@
 import useFormContext from "../../hooks/use-form-context";
+import formatter from "../../utils/formater";
 import EuroIcon from "../icons/euro";
-import Input, { Formatter } from "../shared/input";
+import Input from "../shared/input";
 import StepsInfo from "../steps-info";
 
 /**
@@ -24,7 +25,7 @@ export default function PayRollForm() {
         </div>
         <div className="flex flex-col space-y-7 w-full lg:w-3/4">
           <Input
-            format={new Formatter().float()}
+            format={formatter().float()}
             onChange={handleChange}
             startIcon={<EuroIcon />}
             value={data.totalGrossWages}
@@ -32,7 +33,7 @@ export default function PayRollForm() {
             label="Total gross wages of R&D employees/year"
           />
           <Input
-            format={new Formatter().float()}
+            format={formatter().float()}
             onChange={handleChange}
             name="totalProjectPerMonth"
             value={data.totalProjectPerMonth}
@@ -47,7 +48,7 @@ export default function PayRollForm() {
 
         <div className="flex flex-col space-y-7">
           <Input
-            format={new Formatter().float()}
+            format={formatter().float()}
             onChange={handleChange}
             name="ordersFromThirdParties"
             value={data.ordersFromThirdParties}
