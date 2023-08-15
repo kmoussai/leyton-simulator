@@ -38,7 +38,7 @@ If you prefer using Docker Compose, follow these steps:
 
 ## Deployment on Vercel
 
-This app is also deployed on Vercel. You can access the live version by visiting https://lyton-simulator.vercel.app/
+This app is also deployed on Vercel. You can access the live version by visiting https://leyton-simulator.vercel.app/
 
 # To Improve
 
