@@ -39,3 +39,9 @@ If you prefer using Docker Compose, follow these steps:
 ## Deployment on Vercel
 
 This app is also deployed on Vercel. You can access the live version by visiting https://lyton-simulator.vercel.app/
+
+# To Improve
+
+- We can add more validation to inputs
+- We can make the simulation realtime
+- Missing calculation formula for `Orders to Third Parties`
