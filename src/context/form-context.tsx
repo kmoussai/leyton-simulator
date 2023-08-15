@@ -7,9 +7,9 @@ import { createContext, useState, ReactNode } from "react";
  * totalGrossWages, totalProjectPerMonth, ordersFromThirdParties
  */
 interface IData {
-  totalGrossWages: number;
-  totalProjectPerMonth: number;
-  ordersFromThirdParties: number;
+  totalGrossWages: string;
+  totalProjectPerMonth: string;
+  ordersFromThirdParties: string;
 }
 
 interface FormProviderProps {
@@ -72,9 +72,9 @@ const defaultContextValue: IFormContext = {
     title: "",
   },
   data: {
-    ordersFromThirdParties: 0,
-    totalGrossWages: 0,
-    totalProjectPerMonth: 0,
+    ordersFromThirdParties: "",
+    totalGrossWages: "",
+    totalProjectPerMonth: "",
   },
 };
 
@@ -116,6 +116,8 @@ export const FormProvider = ({ children }: FormProviderProps) => {
     // we are using it in a generic way by taking the name of the input
     // so we can define which element we should update
     const name = event.target.name;
+    console.log({ name, value: event.target.value });
+
     setData((prevData: IData) => ({
       ...prevData,
       [name]: event.target.value,

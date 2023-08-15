@@ -14,5 +14,5 @@ export default function FormInput() {
     0: <PayRollForm />,
     1: <InfoForm />,
   };
-  return <div className="h-[500px] md:h-[450px] w-full p-7">{display[page]}</div>;
+  return <div className="h-[500px] md:h-[450px] w-full">{display[page]}</div>;
 }

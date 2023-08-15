@@ -1,12 +1,12 @@
 import useFormContext from "../../hooks/use-form-context";
 import EuroIcon from "../icons/euro";
-import Input from "../shared/input";
+import Input, { Formatter } from "../shared/input";
 import StepsInfo from "../steps-info";
 
 /**
- * This component contains the form that collect simulator params and apply the changes 
+ * This component contains the form that collect simulator params and apply the changes
  * to the ContextApi state so we can use the in SimulatorResult Component
- * 
+ *
  */
 export default function PayRollForm() {
   const { handleChange, data, numberOfPages, page, handlePageChange } =
@@ -24,22 +24,19 @@ export default function PayRollForm() {
         </div>
         <div className="flex flex-col space-y-7 w-full lg:w-3/4">
           <Input
+            format={new Formatter().float()}
             onChange={handleChange}
-            icon={<EuroIcon />}
-            type="number"
+            startIcon={<EuroIcon />}
             value={data.totalGrossWages}
             name="totalGrossWages"
             label="Total gross wages of R&D employees/year"
           />
           <Input
-            type="number"
+            format={new Formatter().float()}
             onChange={handleChange}
             name="totalProjectPerMonth"
             value={data.totalProjectPerMonth}
-            action={{
-              label: "Monate",
-              onClick: () => {},
-            }}
+            endIcon={<span className="font-medium text-primary-1">Monate</span>}
             label="Total project months (No limit to the duration of a project)"
           />
         </div>
@@ -50,11 +47,11 @@ export default function PayRollForm() {
 
         <div className="flex flex-col space-y-7">
           <Input
+            format={new Formatter().float()}
             onChange={handleChange}
             name="ordersFromThirdParties"
             value={data.ordersFromThirdParties}
-            icon={<EuroIcon />}
-            type="number"
+            startIcon={<EuroIcon />}
             label="Orders from third parties for your R&D projects (Net)"
           />
         </div>
